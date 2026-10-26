@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Trees</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:480px;margin:0 auto;padding:1.5rem 1rem;text-align:center;background:#f4faf4;color:#1b3a1b}
+  a.btn{display:block;margin:.7rem 0;padding:.9rem;border-radius:12px;background:#2e7d32;color:#fff;text-decoration:none;font-weight:600}
+  a.btn.alt{background:#fff;color:#2e7d32;border:2px solid #2e7d32}
+  footer{margin-top:2rem;font-size:.85rem;color:#587858}
+</style></head>
+<body>
+<h1>🌳 Our Trees</h1>
+<p>Planted on 27 October 2026 by Global Shapers Karachi in collaboration with TCF.</p>
+<div id="buttons"></div>
+<footer>An initiative of the World Economic Forum<br>Global Shapers Karachi × TCF</footer>
+
+<script>
+// ===== EDIT ONLY THIS BLOCK LATER =====
+// Leave a link as "" and its button will not show.
+const LINKS = {
+  trees:     "",  // Google Doc: tree headings + photos of the kids
+  talk:      "",  // presentation (Drive link)
+  dashboard: "",  // later
+  instagram: ""   // Global Shapers Karachi Instagram
+};
+// ===== END OF EDIT BLOCK =====
+
+const list = [
+  {label: "Our Trees and the kids who planted them", url: LINKS.trees},
+  {label: "Why trees matter", url: LINKS.talk},
+  {label: "Tree dashboard", url: LINKS.dashboard},
+  {label: "Join the next drive: follow us on Instagram", url: LINKS.instagram, alt: true}
+];
+const box = document.getElementById("buttons");
+list.filter(b => b.url).forEach(b => {
+  const a = document.createElement("a");
+  a.className = "btn" + (b.alt ? " alt" : "");
+  a.href = b.url;
+  a.textContent = b.label;
+  box.appendChild(a);
+});
+</script>
+</body></html>
